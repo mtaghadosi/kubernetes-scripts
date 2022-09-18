@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apache-external-deployment
+  namespace: apache-exposed
+  labels:
+    app: apache-external
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: httpd-ex
+  template:
+    metadata:
+      labels:
+        app: httpd-ex
+    spec:
+      containers:
+      - name: httpd-exp
+        image: httpd:latest
+        ports:
+        - containerPort: 80
