@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: apache-exposed
+
+
+#kubectl create namespaces <insert-some-namespace-name>
