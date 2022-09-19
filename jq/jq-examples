@@ -1,0 +1,15 @@
+kubectl get pods my-pod001 -o json
+kubectl get pods my-pod001 -o json | jq
+kubectl get pods my-pod001 -o json | jp '.metadata'
+kubectl get pods my-pod001 -o json | jq '.metadata.name' 
+kubectl get pods my-pod001 -o json | jq '.metadata.name' -r
+kubectl get pods my-pod001 -o json | jq '.spec.containers'
+kubectl get pods my-pod001 -o json | jq '.spec.containers | length'
+kubectl get pods my-pod001 -o json | jq '.spec.containers[0]'
+kubectl get pods my-pod001 -0 json | jq '.spec.containers[0].name'
+kubectl get pods my-pod001 -0 json | jq '.spec.containers[0].env | length'
+kubectl get pods my-pod001 -o json | jq '.spec.containers[].env | length'
+kubectl get pods my-pod001 -o json | jq '[.spec.containers[].env | length] | add'
+kubectl get pods my-pod001 -o json | jq '[.spec.containers[].env.name] | unique'
+kubectl get pods my-pod001 -o json | jq '.spec.containers[].env.name, .spec.containers[].env.image'
+kubectl get pods my-pod001 -o json | jq '.spec.containers[] | .name, .image'
