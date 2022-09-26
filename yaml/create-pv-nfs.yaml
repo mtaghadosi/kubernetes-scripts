@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-volume-nfs
+  labels:
+    type: local
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteMany
+  #persistentVolumeReclaimPolicy: Retain
+  nfs:
+    path: "/mnt/apache-exposed/"
+    server: 192.168.1.222
+    readOnly: false
