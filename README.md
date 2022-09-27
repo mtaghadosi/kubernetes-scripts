@@ -1,4 +1,4 @@
-<h1>Some of these Script are not belong to me</h1>
+<h1>Some of these Script are not belongs to me</h1>
 
 # Kubernetes Scripts
 A collection of scripts and commands for various tasks in [Kubernetes](https://kubernetes.io/).<br>
