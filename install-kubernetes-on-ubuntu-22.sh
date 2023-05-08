@@ -60,7 +60,7 @@ sudo kubeadm join k8smaster.example.net:6443 --token ((TOKEN FOR JOIN)) --discov
 IF MISSED: kubeadm token create --print-join-command
 
 #=====MASTER NODE ONLY=====
-curl https://projectcalico.docs.tigera.io/manifests/calico.yaml -O && kubectl apply -f calico.yaml
+curl https://github.com/mtaghadosi/kubernetes-scripts/blob/main/calico-plugin-for-k8s.yaml -O && kubectl apply -f calico.yaml
 kubectl get pods -n kube-system ((WAIT UNTIL ALL NODES COME UP))
 
 END
